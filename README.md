@@ -2,6 +2,14 @@
 BioFusionDTI: A robust deep learning framework for drug-target interaction (DTI) prediction by integrating graph and sequence modalities.
 
 
+---
+
+## Installation
+1. Create the conda environment:
+   ```bash
+   conda env create -f biofusiondti.yaml
+   conda activate biofusiondti
+
 
 ## Feature Extraction
 We provide scripts to generate different types of features for drugs and proteins.
