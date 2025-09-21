@@ -1,0 +1,349 @@
+
+=== Configuration ===
+device: cuda:2
+seed: 3407
+batch_size: 32
+epochs: 100
+num_workers: 8
+learning_rate: 0.0003
+weight_decay: 5e-05
+patience: 10
+task: DRH
+task_lower: drh
+data_prefix: drug
+======================
+
+
+============================================================
+Training Seed 42
+============================================================
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_42/drug_train.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 17060 valid pairs (time: 210.68s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_42/drug_val.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 2530 valid pairs (time: 33.64s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_42/drug_test.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 5025 valid pairs (time: 63.21s)
+[Epoch 1/100] Train Loss: 0.6392 Valid Loss: 0.6516 | Acc: 0.6573 | Prec: 0.7835 | Recall: 0.4652 | F1: 0.5838 | MCC: 0.3553 | AUROC: 0.7502 | AUPR: 0.7469
+[Epoch 2/100] Train Loss: 0.5822 Valid Loss: 0.5714 | Acc: 0.7423 | Prec: 0.7549 | Recall: 0.7422 | F1: 0.7485 | MCC: 0.4844 | AUROC: 0.8073 | AUPR: 0.8237
+[Epoch 3/100] Train Loss: 0.5556 Valid Loss: 0.5870 | Acc: 0.7217 | Prec: 0.8030 | Recall: 0.6113 | F1: 0.6942 | MCC: 0.4614 | AUROC: 0.8073 | AUPR: 0.8036
+EarlyStopping counter: 1 out of 10
+[Epoch 4/100] Train Loss: 0.5381 Valid Loss: 0.5627 | Acc: 0.7526 | Prec: 0.7938 | Recall: 0.7039 | F1: 0.7461 | MCC: 0.5100 | AUROC: 0.8238 | AUPR: 0.8253
+[Epoch 5/100] Train Loss: 0.5252 Valid Loss: 0.5567 | Acc: 0.7644 | Prec: 0.8116 | Recall: 0.7085 | F1: 0.7565 | MCC: 0.5350 | AUROC: 0.8341 | AUPR: 0.8481
+[Epoch 6/100] Train Loss: 0.5152 Valid Loss: 0.5393 | Acc: 0.7640 | Prec: 0.7924 | Recall: 0.7360 | F1: 0.7632 | MCC: 0.5301 | AUROC: 0.8403 | AUPR: 0.8550
+[Epoch 7/100] Train Loss: 0.5053 Valid Loss: 0.5283 | Acc: 0.7771 | Prec: 0.7928 | Recall: 0.7697 | F1: 0.7811 | MCC: 0.5544 | AUROC: 0.8530 | AUPR: 0.8669
+[Epoch 8/100] Train Loss: 0.4961 Valid Loss: 0.5385 | Acc: 0.7755 | Prec: 0.7949 | Recall: 0.7621 | F1: 0.7781 | MCC: 0.5516 | AUROC: 0.8432 | AUPR: 0.8454
+EarlyStopping counter: 1 out of 10
+[Epoch 9/100] Train Loss: 0.4834 Valid Loss: 0.5414 | Acc: 0.7640 | Prec: 0.8299 | Recall: 0.6832 | F1: 0.7495 | MCC: 0.5394 | AUROC: 0.8425 | AUPR: 0.8550
+EarlyStopping counter: 2 out of 10
+[Epoch 10/100] Train Loss: 0.4741 Valid Loss: 0.5205 | Acc: 0.7830 | Prec: 0.8027 | Recall: 0.7689 | F1: 0.7855 | MCC: 0.5667 | AUROC: 0.8566 | AUPR: 0.8674
+[Epoch 11/100] Train Loss: 0.4652 Valid Loss: 0.5409 | Acc: 0.7621 | Prec: 0.8015 | Recall: 0.7169 | F1: 0.7569 | MCC: 0.5284 | AUROC: 0.8395 | AUPR: 0.8466
+EarlyStopping counter: 1 out of 10
+[Epoch 12/100] Train Loss: 0.4528 Valid Loss: 0.5391 | Acc: 0.7715 | Prec: 0.8252 | Recall: 0.7077 | F1: 0.7619 | MCC: 0.5507 | AUROC: 0.8471 | AUPR: 0.8663
+EarlyStopping counter: 2 out of 10
+[Epoch 13/100] Train Loss: 0.4491 Valid Loss: 0.5400 | Acc: 0.7664 | Prec: 0.8219 | Recall: 0.6993 | F1: 0.7557 | MCC: 0.5411 | AUROC: 0.8508 | AUPR: 0.8634
+EarlyStopping counter: 3 out of 10
+[Epoch 14/100] Train Loss: 0.4386 Valid Loss: 0.5288 | Acc: 0.7881 | Prec: 0.8152 | Recall: 0.7628 | F1: 0.7881 | MCC: 0.5780 | AUROC: 0.8584 | AUPR: 0.8669
+[Epoch 15/100] Train Loss: 0.4287 Valid Loss: 0.5295 | Acc: 0.7708 | Prec: 0.8203 | Recall: 0.7123 | F1: 0.7625 | MCC: 0.5481 | AUROC: 0.8528 | AUPR: 0.8590
+EarlyStopping counter: 1 out of 10
+[Epoch 16/100] Train Loss: 0.4213 Valid Loss: 0.5393 | Acc: 0.7826 | Prec: 0.8266 | Recall: 0.7330 | F1: 0.7770 | MCC: 0.5703 | AUROC: 0.8526 | AUPR: 0.8641
+EarlyStopping counter: 2 out of 10
+[Epoch 17/100] Train Loss: 0.3824 Valid Loss: 0.5426 | Acc: 0.7866 | Prec: 0.8198 | Recall: 0.7521 | F1: 0.7845 | MCC: 0.5760 | AUROC: 0.8608 | AUPR: 0.8699
+[Epoch 18/100] Train Loss: 0.3658 Valid Loss: 0.5463 | Acc: 0.7791 | Prec: 0.8143 | Recall: 0.7414 | F1: 0.7761 | MCC: 0.5614 | AUROC: 0.8560 | AUPR: 0.8674
+EarlyStopping counter: 1 out of 10
+[Epoch 19/100] Train Loss: 0.3619 Valid Loss: 0.5403 | Acc: 0.7826 | Prec: 0.8141 | Recall: 0.7506 | F1: 0.7811 | MCC: 0.5677 | AUROC: 0.8612 | AUPR: 0.8690
+[Epoch 20/100] Train Loss: 0.3592 Valid Loss: 0.5467 | Acc: 0.7866 | Prec: 0.8198 | Recall: 0.7521 | F1: 0.7845 | MCC: 0.5760 | AUROC: 0.8611 | AUPR: 0.8650
+EarlyStopping counter: 1 out of 10
+[Epoch 21/100] Train Loss: 0.3506 Valid Loss: 0.5610 | Acc: 0.7838 | Prec: 0.8322 | Recall: 0.7284 | F1: 0.7768 | MCC: 0.5737 | AUROC: 0.8624 | AUPR: 0.8672
+[Epoch 22/100] Train Loss: 0.3456 Valid Loss: 0.5552 | Acc: 0.7830 | Prec: 0.8137 | Recall: 0.7521 | F1: 0.7817 | MCC: 0.5684 | AUROC: 0.8580 | AUPR: 0.8649
+EarlyStopping counter: 1 out of 10
+[Epoch 23/100] Train Loss: 0.3453 Valid Loss: 0.5645 | Acc: 0.7739 | Prec: 0.8096 | Recall: 0.7353 | F1: 0.7706 | MCC: 0.5512 | AUROC: 0.8543 | AUPR: 0.8575
+EarlyStopping counter: 2 out of 10
+[Epoch 24/100] Train Loss: 0.3393 Valid Loss: 0.5692 | Acc: 0.7791 | Prec: 0.8202 | Recall: 0.7330 | F1: 0.7741 | MCC: 0.5626 | AUROC: 0.8566 | AUPR: 0.8638
+EarlyStopping counter: 3 out of 10
+[Epoch 25/100] Train Loss: 0.3403 Valid Loss: 0.5637 | Acc: 0.7814 | Prec: 0.7987 | Recall: 0.7712 | F1: 0.7847 | MCC: 0.5632 | AUROC: 0.8550 | AUPR: 0.8603
+EarlyStopping counter: 4 out of 10
+[Epoch 26/100] Train Loss: 0.3393 Valid Loss: 0.5569 | Acc: 0.7806 | Prec: 0.8102 | Recall: 0.7513 | F1: 0.7797 | MCC: 0.5635 | AUROC: 0.8568 | AUPR: 0.8610
+EarlyStopping counter: 5 out of 10
+[Epoch 27/100] Train Loss: 0.3385 Valid Loss: 0.5643 | Acc: 0.7783 | Prec: 0.8199 | Recall: 0.7314 | F1: 0.7732 | MCC: 0.5611 | AUROC: 0.8560 | AUPR: 0.8588
+EarlyStopping counter: 6 out of 10
+[Epoch 28/100] Train Loss: 0.3348 Valid Loss: 0.5651 | Acc: 0.7842 | Prec: 0.8111 | Recall: 0.7590 | F1: 0.7842 | MCC: 0.5701 | AUROC: 0.8596 | AUPR: 0.8619
+EarlyStopping counter: 7 out of 10
+[Epoch 29/100] Train Loss: 0.3413 Valid Loss: 0.5573 | Acc: 0.7826 | Prec: 0.8232 | Recall: 0.7376 | F1: 0.7780 | MCC: 0.5696 | AUROC: 0.8585 | AUPR: 0.8652
+EarlyStopping counter: 8 out of 10
+[Epoch 30/100] Train Loss: 0.3358 Valid Loss: 0.5688 | Acc: 0.7846 | Prec: 0.8113 | Recall: 0.7598 | F1: 0.7847 | MCC: 0.5709 | AUROC: 0.8551 | AUPR: 0.8624
+EarlyStopping counter: 9 out of 10
+[Epoch 31/100] Train Loss: 0.3359 Valid Loss: 0.5590 | Acc: 0.7802 | Prec: 0.8111 | Recall: 0.7490 | F1: 0.7788 | MCC: 0.5629 | AUROC: 0.8561 | AUPR: 0.8647
+EarlyStopping counter: 10 out of 10
+Early stopping at epoch 31
+Best model at epoch 21 with Score = 0.8624
+Seed 42 Test Results:
+[Test] Loss: 0.5641 | Acc: 0.7914 | Prec: 0.8283 | Recall: 0.7485 | F1: 0.7864 | MCC: 0.5865 | AUROC: 0.8624 | AUPR: 0.8594
+
+============================================================
+Training Seed 1234
+============================================================
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_1234/drug_train.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 17190 valid pairs (time: 203.17s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_1234/drug_val.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 2591 valid pairs (time: 31.49s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_1234/drug_test.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 4834 valid pairs (time: 58.71s)
+[Epoch 1/100] Train Loss: 0.6460 Valid Loss: 0.5987 | Acc: 0.7063 | Prec: 0.7348 | Recall: 0.6495 | F1: 0.6895 | MCC: 0.4157 | AUROC: 0.7786 | AUPR: 0.7859
+[Epoch 2/100] Train Loss: 0.5849 Valid Loss: 0.5780 | Acc: 0.7283 | Prec: 0.7625 | Recall: 0.6664 | F1: 0.7112 | MCC: 0.4606 | AUROC: 0.8059 | AUPR: 0.8019
+[Epoch 3/100] Train Loss: 0.5595 Valid Loss: 0.5815 | Acc: 0.7406 | Prec: 0.7776 | Recall: 0.6772 | F1: 0.7239 | MCC: 0.4857 | AUROC: 0.8081 | AUPR: 0.7980
+[Epoch 4/100] Train Loss: 0.5441 Valid Loss: 0.5589 | Acc: 0.7530 | Prec: 0.8199 | Recall: 0.6510 | F1: 0.7258 | MCC: 0.5176 | AUROC: 0.8310 | AUPR: 0.8275
+[Epoch 5/100] Train Loss: 0.5305 Valid Loss: 0.5648 | Acc: 0.7499 | Prec: 0.8515 | Recall: 0.6080 | F1: 0.7094 | MCC: 0.5224 | AUROC: 0.8333 | AUPR: 0.8394
+[Epoch 6/100] Train Loss: 0.5149 Valid Loss: 0.5556 | Acc: 0.7603 | Prec: 0.8232 | Recall: 0.6656 | F1: 0.7361 | MCC: 0.5309 | AUROC: 0.8360 | AUPR: 0.8427
+[Epoch 7/100] Train Loss: 0.5060 Valid Loss: 0.5235 | Acc: 0.7862 | Prec: 0.8094 | Recall: 0.7510 | F1: 0.7791 | MCC: 0.5740 | AUROC: 0.8567 | AUPR: 0.8599
+[Epoch 8/100] Train Loss: 0.4959 Valid Loss: 0.5440 | Acc: 0.7696 | Prec: 0.8253 | Recall: 0.6864 | F1: 0.7495 | MCC: 0.5474 | AUROC: 0.8426 | AUPR: 0.8432
+EarlyStopping counter: 1 out of 10
+[Epoch 9/100] Train Loss: 0.4845 Valid Loss: 0.5238 | Acc: 0.7866 | Prec: 0.8252 | Recall: 0.7294 | F1: 0.7744 | MCC: 0.5773 | AUROC: 0.8581 | AUPR: 0.8607
+[Epoch 10/100] Train Loss: 0.4737 Valid Loss: 0.5215 | Acc: 0.7827 | Prec: 0.8336 | Recall: 0.7087 | F1: 0.7661 | MCC: 0.5722 | AUROC: 0.8614 | AUPR: 0.8661
+[Epoch 11/100] Train Loss: 0.4644 Valid Loss: 0.5163 | Acc: 0.7985 | Prec: 0.8069 | Recall: 0.7871 | F1: 0.7969 | MCC: 0.5973 | AUROC: 0.8687 | AUPR: 0.8740
+[Epoch 12/100] Train Loss: 0.4532 Valid Loss: 0.5134 | Acc: 0.7981 | Prec: 0.8263 | Recall: 0.7571 | F1: 0.7902 | MCC: 0.5986 | AUROC: 0.8630 | AUPR: 0.8609
+EarlyStopping counter: 1 out of 10
+[Epoch 13/100] Train Loss: 0.4455 Valid Loss: 0.5109 | Acc: 0.7970 | Prec: 0.8414 | Recall: 0.7341 | F1: 0.7841 | MCC: 0.5991 | AUROC: 0.8685 | AUPR: 0.8638
+EarlyStopping counter: 2 out of 10
+[Epoch 14/100] Train Loss: 0.4389 Valid Loss: 0.5201 | Acc: 0.7908 | Prec: 0.7792 | Recall: 0.8140 | F1: 0.7962 | MCC: 0.5821 | AUROC: 0.8651 | AUPR: 0.8596
+EarlyStopping counter: 3 out of 10
+[Epoch 15/100] Train Loss: 0.4283 Valid Loss: 0.5148 | Acc: 0.8024 | Prec: 0.8252 | Recall: 0.7694 | F1: 0.7963 | MCC: 0.6063 | AUROC: 0.8625 | AUPR: 0.8662
+EarlyStopping counter: 4 out of 10
+[Epoch 16/100] Train Loss: 0.4203 Valid Loss: 0.5294 | Acc: 0.7908 | Prec: 0.8078 | Recall: 0.7656 | F1: 0.7861 | MCC: 0.5825 | AUROC: 0.8562 | AUPR: 0.8494
+EarlyStopping counter: 5 out of 10
+[Epoch 17/100] Train Loss: 0.4158 Valid Loss: 0.5233 | Acc: 0.8039 | Prec: 0.8543 | Recall: 0.7348 | F1: 0.7901 | MCC: 0.6142 | AUROC: 0.8639 | AUPR: 0.8610
+EarlyStopping counter: 6 out of 10
+[Epoch 18/100] Train Loss: 0.4049 Valid Loss: 0.5108 | Acc: 0.8070 | Prec: 0.8291 | Recall: 0.7756 | F1: 0.8014 | MCC: 0.6154 | AUROC: 0.8727 | AUPR: 0.8711
+[Epoch 19/100] Train Loss: 0.4015 Valid Loss: 0.4977 | Acc: 0.8213 | Prec: 0.8213 | Recall: 0.8232 | F1: 0.8223 | MCC: 0.6426 | AUROC: 0.8838 | AUPR: 0.8889
+[Epoch 20/100] Train Loss: 0.3927 Valid Loss: 0.5352 | Acc: 0.7951 | Prec: 0.8115 | Recall: 0.7709 | F1: 0.7907 | MCC: 0.5909 | AUROC: 0.8595 | AUPR: 0.8572
+EarlyStopping counter: 1 out of 10
+[Epoch 21/100] Train Loss: 0.3861 Valid Loss: 0.5327 | Acc: 0.7981 | Prec: 0.8486 | Recall: 0.7279 | F1: 0.7836 | MCC: 0.6027 | AUROC: 0.8693 | AUPR: 0.8654
+EarlyStopping counter: 2 out of 10
+[Epoch 22/100] Train Loss: 0.3804 Valid Loss: 0.5182 | Acc: 0.8120 | Prec: 0.8293 | Recall: 0.7879 | F1: 0.8080 | MCC: 0.6249 | AUROC: 0.8678 | AUPR: 0.8654
+EarlyStopping counter: 3 out of 10
+[Epoch 23/100] Train Loss: 0.3721 Valid Loss: 0.5431 | Acc: 0.7873 | Prec: 0.8272 | Recall: 0.7287 | F1: 0.7748 | MCC: 0.5790 | AUROC: 0.8592 | AUPR: 0.8575
+EarlyStopping counter: 4 out of 10
+[Epoch 24/100] Train Loss: 0.3657 Valid Loss: 0.5139 | Acc: 0.8120 | Prec: 0.8225 | Recall: 0.7978 | F1: 0.8100 | MCC: 0.6244 | AUROC: 0.8735 | AUPR: 0.8740
+EarlyStopping counter: 5 out of 10
+[Epoch 25/100] Train Loss: 0.3615 Valid Loss: 0.5380 | Acc: 0.8036 | Prec: 0.8118 | Recall: 0.7925 | F1: 0.8020 | MCC: 0.6073 | AUROC: 0.8664 | AUPR: 0.8616
+EarlyStopping counter: 6 out of 10
+[Epoch 26/100] Train Loss: 0.3281 Valid Loss: 0.5301 | Acc: 0.8086 | Prec: 0.8197 | Recall: 0.7932 | F1: 0.8063 | MCC: 0.6175 | AUROC: 0.8773 | AUPR: 0.8704
+EarlyStopping counter: 7 out of 10
+[Epoch 27/100] Train Loss: 0.3133 Valid Loss: 0.5265 | Acc: 0.8117 | Prec: 0.8357 | Recall: 0.7779 | F1: 0.8057 | MCC: 0.6249 | AUROC: 0.8793 | AUPR: 0.8749
+EarlyStopping counter: 8 out of 10
+[Epoch 28/100] Train Loss: 0.3015 Valid Loss: 0.5384 | Acc: 0.8151 | Prec: 0.8352 | Recall: 0.7871 | F1: 0.8104 | MCC: 0.6314 | AUROC: 0.8758 | AUPR: 0.8731
+EarlyStopping counter: 9 out of 10
+[Epoch 29/100] Train Loss: 0.3050 Valid Loss: 0.5460 | Acc: 0.8036 | Prec: 0.7955 | Recall: 0.8194 | F1: 0.8073 | MCC: 0.6073 | AUROC: 0.8744 | AUPR: 0.8733
+EarlyStopping counter: 10 out of 10
+Early stopping at epoch 29
+Best model at epoch 19 with Score = 0.8838
+Seed 1234 Test Results:
+[Test] Loss: 0.5422 | Acc: 0.7801 | Prec: 0.7920 | Recall: 0.7731 | F1: 0.7824 | MCC: 0.5604 | AUROC: 0.8554 | AUPR: 0.8645
+
+============================================================
+Training Seed 3407
+============================================================
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_3407/drug_train.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 17365 valid pairs (time: 205.84s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_3407/drug_val.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 2525 valid pairs (time: 30.44s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_3407/drug_test.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 4725 valid pairs (time: 57.08s)
+[Epoch 1/100] Train Loss: 0.6288 Valid Loss: 0.6484 | Acc: 0.6590 | Prec: 0.7050 | Recall: 0.5584 | F1: 0.6232 | MCC: 0.3266 | AUROC: 0.7308 | AUPR: 0.7167
+[Epoch 2/100] Train Loss: 0.5735 Valid Loss: 0.6116 | Acc: 0.6780 | Prec: 0.7391 | Recall: 0.5600 | F1: 0.6372 | MCC: 0.3687 | AUROC: 0.7582 | AUPR: 0.7647
+[Epoch 3/100] Train Loss: 0.5461 Valid Loss: 0.6267 | Acc: 0.6796 | Prec: 0.7427 | Recall: 0.5592 | F1: 0.6380 | MCC: 0.3724 | AUROC: 0.7537 | AUPR: 0.7478
+EarlyStopping counter: 1 out of 10
+[Epoch 4/100] Train Loss: 0.5316 Valid Loss: 0.6211 | Acc: 0.6832 | Prec: 0.7557 | Recall: 0.5506 | F1: 0.6370 | MCC: 0.3826 | AUROC: 0.7719 | AUPR: 0.7608
+[Epoch 5/100] Train Loss: 0.5179 Valid Loss: 0.6137 | Acc: 0.7109 | Prec: 0.7284 | Recall: 0.6816 | F1: 0.7042 | MCC: 0.4230 | AUROC: 0.7769 | AUPR: 0.7630
+[Epoch 6/100] Train Loss: 0.5087 Valid Loss: 0.6244 | Acc: 0.6848 | Prec: 0.7664 | Recall: 0.5404 | F1: 0.6339 | MCC: 0.3888 | AUROC: 0.7489 | AUPR: 0.7566
+EarlyStopping counter: 1 out of 10
+[Epoch 7/100] Train Loss: 0.4981 Valid Loss: 0.6146 | Acc: 0.7089 | Prec: 0.7500 | Recall: 0.6353 | F1: 0.6879 | MCC: 0.4237 | AUROC: 0.7776 | AUPR: 0.7633
+[Epoch 8/100] Train Loss: 0.4885 Valid Loss: 0.6111 | Acc: 0.6986 | Prec: 0.7490 | Recall: 0.6063 | F1: 0.6701 | MCC: 0.4059 | AUROC: 0.7733 | AUPR: 0.7623
+EarlyStopping counter: 1 out of 10
+[Epoch 9/100] Train Loss: 0.4796 Valid Loss: 0.6165 | Acc: 0.6923 | Prec: 0.7336 | Recall: 0.6133 | F1: 0.6681 | MCC: 0.3909 | AUROC: 0.7634 | AUPR: 0.7610
+EarlyStopping counter: 2 out of 10
+[Epoch 10/100] Train Loss: 0.4714 Valid Loss: 0.6137 | Acc: 0.7010 | Prec: 0.7097 | Recall: 0.6902 | F1: 0.6998 | MCC: 0.4022 | AUROC: 0.7783 | AUPR: 0.7703
+[Epoch 11/100] Train Loss: 0.4621 Valid Loss: 0.6383 | Acc: 0.6784 | Prec: 0.7259 | Recall: 0.5835 | F1: 0.6470 | MCC: 0.3652 | AUROC: 0.7609 | AUPR: 0.7660
+EarlyStopping counter: 1 out of 10
+[Epoch 12/100] Train Loss: 0.4536 Valid Loss: 0.6176 | Acc: 0.7069 | Prec: 0.7269 | Recall: 0.6722 | F1: 0.6985 | MCC: 0.4154 | AUROC: 0.7786 | AUPR: 0.7766
+[Epoch 13/100] Train Loss: 0.4454 Valid Loss: 0.6117 | Acc: 0.7149 | Prec: 0.7581 | Recall: 0.6392 | F1: 0.6936 | MCC: 0.4360 | AUROC: 0.7912 | AUPR: 0.7928
+[Epoch 14/100] Train Loss: 0.4395 Valid Loss: 0.6019 | Acc: 0.6970 | Prec: 0.7289 | Recall: 0.6369 | F1: 0.6798 | MCC: 0.3980 | AUROC: 0.7843 | AUPR: 0.7851
+EarlyStopping counter: 1 out of 10
+[Epoch 15/100] Train Loss: 0.4291 Valid Loss: 0.6348 | Acc: 0.7002 | Prec: 0.7648 | Recall: 0.5867 | F1: 0.6640 | MCC: 0.4133 | AUROC: 0.7714 | AUPR: 0.7832
+EarlyStopping counter: 2 out of 10
+[Epoch 16/100] Train Loss: 0.4245 Valid Loss: 0.6184 | Acc: 0.7133 | Prec: 0.7423 | Recall: 0.6620 | F1: 0.6998 | MCC: 0.4297 | AUROC: 0.7915 | AUPR: 0.7893
+[Epoch 17/100] Train Loss: 0.4183 Valid Loss: 0.6106 | Acc: 0.7311 | Prec: 0.7569 | Recall: 0.6886 | F1: 0.7211 | MCC: 0.4645 | AUROC: 0.7926 | AUPR: 0.7897
+[Epoch 18/100] Train Loss: 0.4083 Valid Loss: 0.6307 | Acc: 0.7097 | Prec: 0.7415 | Recall: 0.6525 | F1: 0.6942 | MCC: 0.4232 | AUROC: 0.7844 | AUPR: 0.7923
+EarlyStopping counter: 1 out of 10
+[Epoch 19/100] Train Loss: 0.4018 Valid Loss: 0.6473 | Acc: 0.7022 | Prec: 0.7080 | Recall: 0.6980 | F1: 0.7030 | MCC: 0.4044 | AUROC: 0.7764 | AUPR: 0.7742
+EarlyStopping counter: 2 out of 10
+[Epoch 20/100] Train Loss: 0.3952 Valid Loss: 0.6724 | Acc: 0.7014 | Prec: 0.7345 | Recall: 0.6400 | F1: 0.6840 | MCC: 0.4069 | AUROC: 0.7760 | AUPR: 0.7758
+EarlyStopping counter: 3 out of 10
+[Epoch 21/100] Train Loss: 0.3622 Valid Loss: 0.6600 | Acc: 0.7038 | Prec: 0.7526 | Recall: 0.6157 | F1: 0.6773 | MCC: 0.4156 | AUROC: 0.7893 | AUPR: 0.7961
+EarlyStopping counter: 4 out of 10
+[Epoch 22/100] Train Loss: 0.3501 Valid Loss: 0.6771 | Acc: 0.7018 | Prec: 0.7453 | Recall: 0.6220 | F1: 0.6781 | MCC: 0.4102 | AUROC: 0.7870 | AUPR: 0.7926
+EarlyStopping counter: 5 out of 10
+[Epoch 23/100] Train Loss: 0.3384 Valid Loss: 0.6912 | Acc: 0.7042 | Prec: 0.7624 | Recall: 0.6016 | F1: 0.6725 | MCC: 0.4191 | AUROC: 0.7849 | AUPR: 0.7934
+EarlyStopping counter: 6 out of 10
+[Epoch 24/100] Train Loss: 0.3366 Valid Loss: 0.6936 | Acc: 0.7073 | Prec: 0.7612 | Recall: 0.6125 | F1: 0.6788 | MCC: 0.4240 | AUROC: 0.7879 | AUPR: 0.7951
+EarlyStopping counter: 7 out of 10
+[Epoch 25/100] Train Loss: 0.3334 Valid Loss: 0.6864 | Acc: 0.7061 | Prec: 0.7570 | Recall: 0.6157 | F1: 0.6791 | MCC: 0.4208 | AUROC: 0.7847 | AUPR: 0.7955
+EarlyStopping counter: 8 out of 10
+[Epoch 26/100] Train Loss: 0.3275 Valid Loss: 0.7027 | Acc: 0.7188 | Prec: 0.7845 | Recall: 0.6110 | F1: 0.6869 | MCC: 0.4501 | AUROC: 0.7894 | AUPR: 0.7960
+EarlyStopping counter: 9 out of 10
+[Epoch 27/100] Train Loss: 0.3241 Valid Loss: 0.6754 | Acc: 0.7109 | Prec: 0.7573 | Recall: 0.6290 | F1: 0.6872 | MCC: 0.4290 | AUROC: 0.7915 | AUPR: 0.7980
+EarlyStopping counter: 10 out of 10
+Early stopping at epoch 27
+Best model at epoch 17 with Score = 0.7926
+Seed 3407 Test Results:
+[Test] Loss: 0.5237 | Acc: 0.7871 | Prec: 0.7878 | Recall: 0.7664 | F1: 0.7769 | MCC: 0.5736 | AUROC: 0.8596 | AUPR: 0.8473
+
+============================================================
+Training Seed 5678
+============================================================
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_5678/drug_train.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 17181 valid pairs (time: 204.23s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_5678/drug_val.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 2588 valid pairs (time: 30.85s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_5678/drug_test.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 4846 valid pairs (time: 58.10s)
+[Epoch 1/100] Train Loss: 0.6361 Valid Loss: 0.6041 | Acc: 0.6986 | Prec: 0.7900 | Recall: 0.5529 | F1: 0.6505 | MCC: 0.4195 | AUROC: 0.7832 | AUPR: 0.7869
+[Epoch 2/100] Train Loss: 0.5752 Valid Loss: 0.5741 | Acc: 0.7295 | Prec: 0.7967 | Recall: 0.6268 | F1: 0.7016 | MCC: 0.4717 | AUROC: 0.8128 | AUPR: 0.8084
+[Epoch 3/100] Train Loss: 0.5543 Valid Loss: 0.5932 | Acc: 0.7349 | Prec: 0.7777 | Recall: 0.6687 | F1: 0.7191 | MCC: 0.4757 | AUROC: 0.8018 | AUPR: 0.7731
+EarlyStopping counter: 1 out of 10
+[Epoch 4/100] Train Loss: 0.5334 Valid Loss: 0.5793 | Acc: 0.7342 | Prec: 0.8116 | Recall: 0.6200 | F1: 0.7029 | MCC: 0.4841 | AUROC: 0.8170 | AUPR: 0.8085
+[Epoch 5/100] Train Loss: 0.5223 Valid Loss: 0.5467 | Acc: 0.7651 | Prec: 0.8052 | Recall: 0.7083 | F1: 0.7536 | MCC: 0.5349 | AUROC: 0.8402 | AUPR: 0.8350
+[Epoch 6/100] Train Loss: 0.5128 Valid Loss: 0.5429 | Acc: 0.7705 | Prec: 0.8265 | Recall: 0.6931 | F1: 0.7539 | MCC: 0.5494 | AUROC: 0.8455 | AUPR: 0.8358
+[Epoch 7/100] Train Loss: 0.4985 Valid Loss: 0.5453 | Acc: 0.7674 | Prec: 0.8110 | Recall: 0.7060 | F1: 0.7549 | MCC: 0.5402 | AUROC: 0.8406 | AUPR: 0.8411
+EarlyStopping counter: 1 out of 10
+[Epoch 8/100] Train Loss: 0.4918 Valid Loss: 0.5589 | Acc: 0.7612 | Prec: 0.8275 | Recall: 0.6687 | F1: 0.7397 | MCC: 0.5338 | AUROC: 0.8444 | AUPR: 0.8391
+EarlyStopping counter: 2 out of 10
+[Epoch 9/100] Train Loss: 0.4783 Valid Loss: 0.5384 | Acc: 0.7813 | Prec: 0.8195 | Recall: 0.7296 | F1: 0.7720 | MCC: 0.5667 | AUROC: 0.8489 | AUPR: 0.8453
+[Epoch 10/100] Train Loss: 0.4674 Valid Loss: 0.5492 | Acc: 0.7774 | Prec: 0.7744 | Recall: 0.7921 | F1: 0.7831 | MCC: 0.5548 | AUROC: 0.8445 | AUPR: 0.8459
+EarlyStopping counter: 1 out of 10
+[Epoch 11/100] Train Loss: 0.4612 Valid Loss: 0.5711 | Acc: 0.7705 | Prec: 0.8265 | Recall: 0.6931 | F1: 0.7539 | MCC: 0.5494 | AUROC: 0.8455 | AUPR: 0.8481
+EarlyStopping counter: 2 out of 10
+[Epoch 12/100] Train Loss: 0.4525 Valid Loss: 0.5193 | Acc: 0.7917 | Prec: 0.8086 | Recall: 0.7723 | F1: 0.7900 | MCC: 0.5843 | AUROC: 0.8613 | AUPR: 0.8589
+[Epoch 13/100] Train Loss: 0.4414 Valid Loss: 0.5324 | Acc: 0.7786 | Prec: 0.8179 | Recall: 0.7251 | F1: 0.7687 | MCC: 0.5616 | AUROC: 0.8536 | AUPR: 0.8456
+EarlyStopping counter: 1 out of 10
+[Epoch 14/100] Train Loss: 0.4374 Valid Loss: 0.5331 | Acc: 0.7828 | Prec: 0.8262 | Recall: 0.7243 | F1: 0.7719 | MCC: 0.5709 | AUROC: 0.8571 | AUPR: 0.8549
+EarlyStopping counter: 2 out of 10
+[Epoch 15/100] Train Loss: 0.4254 Valid Loss: 0.5503 | Acc: 0.7886 | Prec: 0.8109 | Recall: 0.7609 | F1: 0.7851 | MCC: 0.5787 | AUROC: 0.8530 | AUPR: 0.8572
+EarlyStopping counter: 3 out of 10
+[Epoch 16/100] Train Loss: 0.4205 Valid Loss: 0.5592 | Acc: 0.7770 | Prec: 0.7958 | Recall: 0.7540 | F1: 0.7743 | MCC: 0.5551 | AUROC: 0.8453 | AUPR: 0.8497
+EarlyStopping counter: 4 out of 10
+[Epoch 17/100] Train Loss: 0.4130 Valid Loss: 0.5466 | Acc: 0.7902 | Prec: 0.8070 | Recall: 0.7708 | F1: 0.7885 | MCC: 0.5812 | AUROC: 0.8522 | AUPR: 0.8470
+EarlyStopping counter: 5 out of 10
+[Epoch 18/100] Train Loss: 0.4057 Valid Loss: 0.5497 | Acc: 0.7944 | Prec: 0.7903 | Recall: 0.8096 | F1: 0.7998 | MCC: 0.5888 | AUROC: 0.8574 | AUPR: 0.8462
+EarlyStopping counter: 6 out of 10
+[Epoch 19/100] Train Loss: 0.3656 Valid Loss: 0.5417 | Acc: 0.8087 | Prec: 0.8375 | Recall: 0.7730 | F1: 0.8040 | MCC: 0.6197 | AUROC: 0.8638 | AUPR: 0.8527
+[Epoch 20/100] Train Loss: 0.3528 Valid Loss: 0.5390 | Acc: 0.8018 | Prec: 0.8106 | Recall: 0.7951 | F1: 0.8028 | MCC: 0.6037 | AUROC: 0.8631 | AUPR: 0.8520
+EarlyStopping counter: 1 out of 10
+[Epoch 21/100] Train Loss: 0.3457 Valid Loss: 0.5514 | Acc: 0.8076 | Prec: 0.8257 | Recall: 0.7867 | F1: 0.8058 | MCC: 0.6160 | AUROC: 0.8612 | AUPR: 0.8518
+EarlyStopping counter: 2 out of 10
+[Epoch 22/100] Train Loss: 0.3439 Valid Loss: 0.5483 | Acc: 0.7995 | Prec: 0.8228 | Recall: 0.7708 | F1: 0.7959 | MCC: 0.6004 | AUROC: 0.8581 | AUPR: 0.8461
+EarlyStopping counter: 3 out of 10
+[Epoch 23/100] Train Loss: 0.3376 Valid Loss: 0.5653 | Acc: 0.8002 | Prec: 0.8066 | Recall: 0.7974 | F1: 0.8020 | MCC: 0.6005 | AUROC: 0.8555 | AUPR: 0.8438
+EarlyStopping counter: 4 out of 10
+[Epoch 24/100] Train Loss: 0.3356 Valid Loss: 0.5662 | Acc: 0.8022 | Prec: 0.8212 | Recall: 0.7799 | F1: 0.8000 | MCC: 0.6053 | AUROC: 0.8600 | AUPR: 0.8480
+EarlyStopping counter: 5 out of 10
+[Epoch 25/100] Train Loss: 0.3252 Valid Loss: 0.5594 | Acc: 0.8033 | Prec: 0.8150 | Recall: 0.7921 | F1: 0.8034 | MCC: 0.6070 | AUROC: 0.8599 | AUPR: 0.8473
+EarlyStopping counter: 6 out of 10
+[Epoch 26/100] Train Loss: 0.3204 Valid Loss: 0.5774 | Acc: 0.7960 | Prec: 0.7936 | Recall: 0.8081 | F1: 0.8008 | MCC: 0.5919 | AUROC: 0.8562 | AUPR: 0.8489
+EarlyStopping counter: 7 out of 10
+[Epoch 27/100] Train Loss: 0.3256 Valid Loss: 0.5666 | Acc: 0.8045 | Prec: 0.8121 | Recall: 0.7997 | F1: 0.8058 | MCC: 0.6090 | AUROC: 0.8580 | AUPR: 0.8443
+EarlyStopping counter: 8 out of 10
+[Epoch 28/100] Train Loss: 0.3263 Valid Loss: 0.5671 | Acc: 0.8068 | Prec: 0.8346 | Recall: 0.7723 | F1: 0.8022 | MCC: 0.6157 | AUROC: 0.8578 | AUPR: 0.8468
+EarlyStopping counter: 9 out of 10
+[Epoch 29/100] Train Loss: 0.3235 Valid Loss: 0.5631 | Acc: 0.8041 | Prec: 0.8114 | Recall: 0.7997 | F1: 0.8055 | MCC: 0.6083 | AUROC: 0.8565 | AUPR: 0.8500
+EarlyStopping counter: 10 out of 10
+Early stopping at epoch 29
+Best model at epoch 19 with Score = 0.8638
+Seed 5678 Test Results:
+[Test] Loss: 0.5453 | Acc: 0.7930 | Prec: 0.8189 | Recall: 0.7272 | F1: 0.7703 | MCC: 0.5866 | AUROC: 0.8625 | AUPR: 0.8348
+
+============================================================
+Training Seed 8888
+============================================================
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_8888/drug_train.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 17182 valid pairs (time: 204.21s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_8888/drug_val.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 2608 valid pairs (time: 31.44s)
+Loading data /home/qfchen/ProteinDrugInter/datasets/DRH/drug_split_results/seed_8888/drug_test.csv......
+Columns in the dataset: ['DRUG_NAME', 'UNIPROT_ID', 'Label', 'PUBCHEM_CID', 'DRUG_ID', 'SMILES', 'GENE_SYMBOL', 'SEQUENCE']
+Loaded 4825 valid pairs (time: 57.48s)
+[Epoch 1/100] Train Loss: 0.6318 Valid Loss: 0.6135 | Acc: 0.6894 | Prec: 0.7631 | Recall: 0.5996 | F1: 0.6715 | MCC: 0.3950 | AUROC: 0.7758 | AUPR: 0.7810
+[Epoch 2/100] Train Loss: 0.5770 Valid Loss: 0.5872 | Acc: 0.6906 | Prec: 0.7749 | Recall: 0.5858 | F1: 0.6672 | MCC: 0.4017 | AUROC: 0.7979 | AUPR: 0.8161
+[Epoch 3/100] Train Loss: 0.5517 Valid Loss: 0.5727 | Acc: 0.7400 | Prec: 0.7991 | Recall: 0.6799 | F1: 0.7347 | MCC: 0.4892 | AUROC: 0.8160 | AUPR: 0.8231
+[Epoch 4/100] Train Loss: 0.5345 Valid Loss: 0.5641 | Acc: 0.7481 | Prec: 0.7910 | Recall: 0.7125 | F1: 0.7497 | MCC: 0.5003 | AUROC: 0.8226 | AUPR: 0.8328
+[Epoch 5/100] Train Loss: 0.5238 Valid Loss: 0.5830 | Acc: 0.7074 | Prec: 0.8160 | Recall: 0.5778 | F1: 0.6766 | MCC: 0.4445 | AUROC: 0.8078 | AUPR: 0.8241
+EarlyStopping counter: 1 out of 10
+[Epoch 6/100] Train Loss: 0.5096 Valid Loss: 0.5672 | Acc: 0.7611 | Prec: 0.7824 | Recall: 0.7603 | F1: 0.7712 | MCC: 0.5216 | AUROC: 0.8237 | AUPR: 0.8435
+[Epoch 7/100] Train Loss: 0.4949 Valid Loss: 0.5509 | Acc: 0.7473 | Prec: 0.7911 | Recall: 0.7104 | F1: 0.7486 | MCC: 0.4990 | AUROC: 0.8340 | AUPR: 0.8471
+[Epoch 8/100] Train Loss: 0.4836 Valid Loss: 0.5395 | Acc: 0.7638 | Prec: 0.8195 | Recall: 0.7104 | F1: 0.7611 | MCC: 0.5352 | AUROC: 0.8494 | AUPR: 0.8551
+[Epoch 9/100] Train Loss: 0.4684 Valid Loss: 0.5264 | Acc: 0.7761 | Prec: 0.7989 | Recall: 0.7712 | F1: 0.7848 | MCC: 0.5519 | AUROC: 0.8549 | AUPR: 0.8658
+[Epoch 10/100] Train Loss: 0.4617 Valid Loss: 0.5616 | Acc: 0.7289 | Prec: 0.8150 | Recall: 0.6314 | F1: 0.7115 | MCC: 0.4770 | AUROC: 0.8319 | AUPR: 0.8440
+EarlyStopping counter: 1 out of 10
+[Epoch 11/100] Train Loss: 0.4498 Valid Loss: 0.5731 | Acc: 0.7243 | Prec: 0.8357 | Recall: 0.5967 | F1: 0.6962 | MCC: 0.4783 | AUROC: 0.8280 | AUPR: 0.8427
+EarlyStopping counter: 2 out of 10
+[Epoch 12/100] Train Loss: 0.4394 Valid Loss: 0.5457 | Acc: 0.7642 | Prec: 0.7771 | Recall: 0.7777 | F1: 0.7774 | MCC: 0.5267 | AUROC: 0.8421 | AUPR: 0.8518
+EarlyStopping counter: 3 out of 10
+[Epoch 13/100] Train Loss: 0.4334 Valid Loss: 0.6011 | Acc: 0.7235 | Prec: 0.7936 | Recall: 0.6459 | F1: 0.7122 | MCC: 0.4604 | AUROC: 0.8012 | AUPR: 0.8317
+EarlyStopping counter: 4 out of 10
+[Epoch 14/100] Train Loss: 0.4260 Valid Loss: 0.5480 | Acc: 0.7527 | Prec: 0.8401 | Recall: 0.6582 | F1: 0.7381 | MCC: 0.5240 | AUROC: 0.8504 | AUPR: 0.8680
+EarlyStopping counter: 5 out of 10
+[Epoch 15/100] Train Loss: 0.4150 Valid Loss: 0.5672 | Acc: 0.7496 | Prec: 0.8182 | Recall: 0.6778 | F1: 0.7414 | MCC: 0.5112 | AUROC: 0.8451 | AUPR: 0.8588
+EarlyStopping counter: 6 out of 10
+[Epoch 16/100] Train Loss: 0.3787 Valid Loss: 0.5413 | Acc: 0.7753 | Prec: 0.8127 | Recall: 0.7480 | F1: 0.7790 | MCC: 0.5533 | AUROC: 0.8559 | AUPR: 0.8668
+[Epoch 17/100] Train Loss: 0.3623 Valid Loss: 0.5592 | Acc: 0.7588 | Prec: 0.8037 | Recall: 0.7205 | F1: 0.7598 | MCC: 0.5222 | AUROC: 0.8482 | AUPR: 0.8645
+EarlyStopping counter: 1 out of 10
+[Epoch 18/100] Train Loss: 0.3553 Valid Loss: 0.5433 | Acc: 0.7753 | Prec: 0.8193 | Recall: 0.7386 | F1: 0.7768 | MCC: 0.5548 | AUROC: 0.8610 | AUPR: 0.8707
+[Epoch 19/100] Train Loss: 0.3518 Valid Loss: 0.5650 | Acc: 0.7680 | Prec: 0.8094 | Recall: 0.7350 | F1: 0.7704 | MCC: 0.5396 | AUROC: 0.8497 | AUPR: 0.8565
+EarlyStopping counter: 1 out of 10
+[Epoch 20/100] Train Loss: 0.3496 Valid Loss: 0.5681 | Acc: 0.7661 | Prec: 0.8248 | Recall: 0.7089 | F1: 0.7625 | MCC: 0.5406 | AUROC: 0.8524 | AUPR: 0.8615
+EarlyStopping counter: 2 out of 10
+[Epoch 21/100] Train Loss: 0.3437 Valid Loss: 0.5651 | Acc: 0.7634 | Prec: 0.7929 | Recall: 0.7487 | F1: 0.7702 | MCC: 0.5278 | AUROC: 0.8457 | AUPR: 0.8581
+EarlyStopping counter: 3 out of 10
+[Epoch 22/100] Train Loss: 0.3383 Valid Loss: 0.5755 | Acc: 0.7699 | Prec: 0.8147 | Recall: 0.7321 | F1: 0.7712 | MCC: 0.5443 | AUROC: 0.8489 | AUPR: 0.8560
+EarlyStopping counter: 4 out of 10
+[Epoch 23/100] Train Loss: 0.3371 Valid Loss: 0.5648 | Acc: 0.7673 | Prec: 0.8146 | Recall: 0.7256 | F1: 0.7675 | MCC: 0.5397 | AUROC: 0.8510 | AUPR: 0.8606
+EarlyStopping counter: 5 out of 10
+[Epoch 24/100] Train Loss: 0.3357 Valid Loss: 0.5654 | Acc: 0.7661 | Prec: 0.8024 | Recall: 0.7408 | F1: 0.7703 | MCC: 0.5346 | AUROC: 0.8502 | AUPR: 0.8578
+EarlyStopping counter: 6 out of 10
+[Epoch 25/100] Train Loss: 0.3342 Valid Loss: 0.5676 | Acc: 0.7669 | Prec: 0.8051 | Recall: 0.7386 | F1: 0.7704 | MCC: 0.5366 | AUROC: 0.8485 | AUPR: 0.8568
+EarlyStopping counter: 7 out of 10
+[Epoch 26/100] Train Loss: 0.3360 Valid Loss: 0.5731 | Acc: 0.7657 | Prec: 0.8156 | Recall: 0.7205 | F1: 0.7651 | MCC: 0.5373 | AUROC: 0.8502 | AUPR: 0.8536
+EarlyStopping counter: 8 out of 10
+[Epoch 27/100] Train Loss: 0.3320 Valid Loss: 0.5745 | Acc: 0.7581 | Prec: 0.8089 | Recall: 0.7111 | F1: 0.7568 | MCC: 0.5223 | AUROC: 0.8509 | AUPR: 0.8585
+EarlyStopping counter: 9 out of 10
+[Epoch 28/100] Train Loss: 0.3333 Valid Loss: 0.5820 | Acc: 0.7623 | Prec: 0.8116 | Recall: 0.7176 | F1: 0.7617 | MCC: 0.5303 | AUROC: 0.8474 | AUPR: 0.8549
+EarlyStopping counter: 10 out of 10
+Early stopping at epoch 28
+Best model at epoch 18 with Score = 0.8610
+Seed 8888 Test Results:
+[Test] Loss: 0.5621 | Acc: 0.7855 | Prec: 0.8011 | Recall: 0.7567 | F1: 0.7782 | MCC: 0.5717 | AUROC: 0.8499 | AUPR: 0.8445
+
+=== Final Test Results (with Mean ± Std) ===
+             Accuracy    Precision  ...        AUROC         AUPR
+Seed                                ...                          
+42              0.791        0.828  ...        0.862        0.859
+1234             0.78        0.792  ...        0.855        0.865
+3407            0.787        0.788  ...         0.86        0.847
+5678            0.793        0.819  ...        0.862        0.835
+8888            0.785        0.801  ...         0.85        0.845
+Mean±Std  0.787±0.005  0.806±0.017  ...  0.858±0.005  0.850±0.012
+
+[6 rows x 7 columns]
