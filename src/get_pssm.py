@@ -53,8 +53,8 @@ class PsiBlast():
 
 
 if __name__ == '__main__':
-    fastapath = './fasta_2022_05'
-    outdir = './pssm'
+    fastapath = '../fasta'
+    outdir = '../pssm'
     if not os.path.exists(outdir):
         os.makedirs(outdir)
 
