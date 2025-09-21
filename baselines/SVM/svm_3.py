@@ -1,0 +1,142 @@
+#!/usr/bin/env python
+# Author  : KerryChen
+# File    : svm_3.py
+# Time    : 2025/7/28 15:41
+
+import os
+import pickle
+import sys
+import time
+import numpy as np
+import pandas as pd
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, \
+    precision_recall_curve, auc, matthews_corrcoef
+from utils import Logger
+
+
+def read_file(file_path):
+    _, file_extension = os.path.splitext(file_path)
+    if file_extension.lower() == '.csv':
+        return pd.read_csv(file_path)
+    elif file_extension.lower() == '.xlsx':
+        return pd.read_excel(file_path, engine="openpyxl")
+    else:
+        raise ValueError(f"Unsupported file types: {file_extension}")
+
+
+def LoadMyData(my_file, task):
+    t0 = time.time()
+    print(f"Loading dataset from {my_file}...", flush=True)
+    df = read_file(my_file)
+    with open(f'./data/{task}_drug_features.pkl', 'rb') as f:
+        drug_dict = pickle.load(f)
+    with open(f'./data/{task}_protein_features.pkl', 'rb') as f:
+        prot_dict = pickle.load(f)
+
+    features = []
+    for _, row in df.iterrows():
+        drug_id = row['DRUG_ID']
+        prot_id = row['UNIPROT_ID']
+        label = row['Label']
+
+        if drug_id not in drug_dict or prot_id not in prot_dict:
+            continue
+
+        drug_feat = drug_dict[drug_id]
+        prot_feat = prot_dict[prot_id]
+        combined = np.concatenate([drug_feat, prot_feat, [label]])
+        features.append(combined)
+
+    features = np.array(features)
+    print(f"Loaded {len(features)} valid pairs (time: {time.time() - t0:.2f}s)")
+    return features
+
+
+if __name__ == '__main__':
+    prefix = 'prot'  # random / drug / prot
+    task = 'Kinase'
+    task_lower = task.lower()
+
+    log_dir = './logs/'
+    os.makedirs(log_dir, exist_ok=True)
+
+    model_dir = './models/'
+    os.makedirs(model_dir, exist_ok=True)
+
+    result_dir = './results/'
+    os.makedirs(result_dir, exist_ok=True)
+
+    log_file = os.path.join(log_dir, f'{prefix}_svm_{task_lower}.log')
+    sys.stdout = Logger(log_file)
+
+    results = {
+        "accuracy": [], "precision": [], "recall": [],
+        "f1": [], "mcc": [], "roc_auc": [], "pr_auc": []
+    }
+
+    input_dir = f'/home/qfchen/ProteinDrugInter/datasets/{task}/{prefix}_split_results/'
+    seeds = [42, 1234, 3407, 5678, 8888]
+
+    for i in seeds:
+        print(f"\n=== Seed {i} ===")
+        train_file = os.path.join(input_dir, f'seed_{i}/{prefix}_train.csv')
+        valid_file = os.path.join(input_dir, f'seed_{i}/{prefix}_val.csv')
+        test_file = os.path.join(input_dir, f'seed_{i}/{prefix}_test.csv')
+
+        train_set = LoadMyData(train_file, task_lower)
+        valid_set = LoadMyData(valid_file, task_lower)
+        test_set = LoadMyData(test_file, task_lower)
+
+        train_set = np.concatenate([train_set, valid_set])
+        X_train, y_train = train_set[:, :-1], train_set[:, -1]
+        X_test, y_test = test_set[:, :-1], test_set[:, -1]
+
+        # === SVM 模型 ===
+        svm = SVC(
+            C=1.0,
+            kernel='rbf',  # 可改为 'linear', 'poly', 'sigmoid'
+            gamma='scale',
+            probability=True,
+            random_state=42
+        )
+        svm.fit(X_train, y_train)
+
+        y_pred = svm.predict(X_test)
+        y_prob = svm.predict_proba(X_test)[:, 1]
+
+        acc = accuracy_score(y_test, y_pred)
+        pre = precision_score(y_test, y_pred)
+        rec = recall_score(y_test, y_pred)
+        f1 = f1_score(y_test, y_pred)
+        mcc = matthews_corrcoef(y_test, y_pred)
+        roc = roc_auc_score(y_test, y_prob)
+        prc, recs, _ = precision_recall_curve(y_test, y_prob)
+        pr_auc = auc(recs, prc)
+
+        results["accuracy"].append(acc)
+        results["precision"].append(pre)
+        results["recall"].append(rec)
+        results["f1"].append(f1)
+        results["mcc"].append(mcc)
+        results["roc_auc"].append(roc)
+        results["pr_auc"].append(pr_auc)
+
+        print(f"Accuracy:  {acc:.3f}")
+        print(f"Precision: {pre:.3f}")
+        print(f"Recall:    {rec:.3f}")
+        print(f"F1-score:  {f1:.3f}")
+        print(f"MCC:       {mcc:.3f}")
+        print(f"ROC-AUC:   {roc:.3f}")
+        print(f"PR-AUC:    {pr_auc:.3f}")
+
+    print("\n=== Final 5-Seed Results ===")
+    results_df = pd.DataFrame(results).round(3)
+    print(results_df)
+
+    for metric in results:
+        mean_score = np.mean(results[metric])
+        std_score = np.std(results[metric])
+        print(f"{metric}: {mean_score:.3f}±{std_score:.3f}")
+
+    results_df.to_csv(os.path.join(result_dir, f'{prefix}_svm_{task_lower}_results.csv'), index=False)
