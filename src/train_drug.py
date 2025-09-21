@@ -284,7 +284,7 @@ def train_one_seed(cv_root, seed, config, model_dir):
 
 
 if __name__ == '__main__':
-    task = "SNAP"
+    task = "SNAP"   #SNAP/DRH/Kinase
     task_lower = task.lower()
 
     config = {
