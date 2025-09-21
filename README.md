@@ -30,36 +30,56 @@
 ---
 
 ## Data Preparation
+1. Download all human protein sequences from **UniProt**.  
+2. Switch to the `src/` directory:
+   ```bash
+   cd src/
+   ```
+3. Run the following script to generate a FASTA file containing all human proteins:
+   ```bash
+   python get_fasta.py
+   ```
+This will produce a file with all human protein sequences in FASTA format.
 
-- Place protein FASTA sequences in: `datasets/proteins.fasta`  
-- Place SMILES drug files in: `datasets/drugs.smi`  
-- Preprocessed datasets can be organized under the `datasets/` folder.  
+4. Preprocessed datasets can be organized under the `datasets/` folder.
 
 ---
 
 ## Feature Extraction
 
 We provide scripts to generate different types of features for drugs and proteins.
-
-1. **PSSM features**
+1. Switch to the `src/` directory:
    ```bash
-   python src/get_pssm.py --input datasets/proteins.fasta --output pssm/
+   cd src/
    ```
 
-2. **Contact map** (via `esm2_t33_650M_UR50D`)
+2. **PSSM Features**  
+   Generate Position-Specific Scoring Matrix (PSSM) features:
    ```bash
-   python src/get_contact_map.py --input datasets/proteins.fasta --output esm2_contact/
+   python get_pssm.py
    ```
+   **Note:** The results will be saved in the `pssm` directory.
 
-3. **ESM-2 embeddings**
+3. **Contact Maps** (using `esm2_t33_650M_UR50D`)  
+   Generate protein contact maps:
    ```bash
-   python src/get_esm2_feature.py --input datasets/proteins.fasta --output esm2_feature/
+   python get_contact_map.py
    ```
+   **Note:** The results will be saved as `.pt` files in the `esm2_contact` directory.
 
-4. **Drug embeddings (ChemBERTa)**
+4. **ESM-2 Embeddings**  
+   Extract ESM-2 embeddings for proteins:
    ```bash
-   python src/get_drug_feature.py --input datasets/drugs.smi --output chembert_feature/
+   python get_esm2_feature.py
    ```
+   **Note:** The results will be saved as `.pt` files in the `esm2_feature` directory.
+
+5. **Drug Embeddings (ChemBERTa)**  
+   Generate embeddings for drugs using `ChemBERTa-zinc-base-v1`:
+   ```bash
+   python get_drug_feature.py
+   ```
+   **Note:** The results will be saved as `.pkl` files in the `chembert_feature` directory.
 
 ---
 
