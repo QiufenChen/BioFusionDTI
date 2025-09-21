@@ -30,16 +30,19 @@
 ---
 
 ## Data Preparation
-1. Download all human protein sequences from **UniProt**.  
+
+1. Download all human protein sequences from [**UniProt**](https://www.uniprot.org/uniprotkb?query=*&facets=model_organism%3A9606%2Creviewed%3Atrue).  
+
 2. Switch to the `src/` directory:
    ```bash
    cd src/
    ```
+
 3. Run the following script to generate a FASTA file containing all human proteins:
    ```bash
    python get_fasta.py
    ```
-This will produce a file with all human protein sequences in FASTA format.
+   This will produce a file with all human protein sequences in FASTA format.
 
 4. Preprocessed datasets can be organized under the `datasets/` folder.
 
@@ -54,31 +57,43 @@ We provide scripts to generate different types of features for drugs and protein
    ```
 
 2. **PSSM Features**  
+  
    Generate Position-Specific Scoring Matrix (PSSM) features:
+   
    ```bash
    python get_pssm.py
    ```
+   
    **Note:** The results will be saved in the `pssm` directory.
 
 3. **Contact Maps** (using `esm2_t33_650M_UR50D`)  
+   
    Generate protein contact maps:
+   
    ```bash
    python get_contact_map.py
    ```
+   
    **Note:** The results will be saved as `.pt` files in the `esm2_contact` directory.
 
 4. **ESM-2 Embeddings**  
+   
    Extract ESM-2 embeddings for proteins:
+   
    ```bash
    python get_esm2_feature.py
    ```
+   
    **Note:** The results will be saved as `.pt` files in the `esm2_feature` directory.
 
 5. **Drug Embeddings (ChemBERTa)**  
+   
    Generate embeddings for drugs using `ChemBERTa-zinc-base-v1`:
+  
    ```bash
    python get_drug_feature.py
    ```
+   
    **Note:** The results will be saved as `.pkl` files in the `chembert_feature` directory.
 
 ---
@@ -102,7 +117,7 @@ We provide three training settings:
   python train_prot.py
   ```
 
-Training outputs (logs, checkpoints, and results) will be stored under the `logs/`, `models/`, and `results/` directories.
+Training outputs (logs, models, and results) will be stored under the `logs/`, `models/`, and `results/` directories.
 
 ---
 
