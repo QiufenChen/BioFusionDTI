@@ -1,6 +1,6 @@
-# LAGER Model Resources
+# Large Model Resources
 
-This folder contains the resources and instructions for using pre-trained models in the **LAGER** framework for feature extraction. The models include **protein embeddings**, **ProtBert-BFD**, **ProtBert**, **ESM-2**, and **ChemBERTa**.  
+This folder contains the resources and instructions for using pre-trained models in the large framework for feature extraction. The models include **ProtBert-BFD**, **ProtBert**, **ESM-2**, and **ChemBERTa**.  
 
 
 ---
